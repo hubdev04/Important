@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .contslider{
+    width: 100rem;
+    height: 60rem;
+    position: relative;
+    background-color: yellow;
+    
+    
+    transform-style: preserve-3d;
+    
+
+
+}
+
+.contslider div{
+    
+    position: absolute;
+    top: 20rem;
+    left: 10rem;
+    width: 10rem;
+    height: 10rem;
+    animation: rot 10s linear infinite;
+    transform-origin: center;
+    transform-style: preserve-3d;  
+}
+@keyframes rot{
+    0%{
+        transform:perspective(1000px)  rotateY(0deg);
+    }
+    100%{
+        transform:perspective(1000px)  rotateY(360deg);
+    }
+}
+.contslider div img{
+    position: absolute;
+    top: 0;
+    left: 20rem;
+    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+   transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+    transition: 2s;
+    border-radius: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="contslider">
+        <div class="imgslider sli1" style="--i:1;"><img src="./flower1.png"></div>
+        <div class="imgslider sli2" style="--i:2;"><img src="./flower2.png"></div>
+        <div class="imgslider sli3" style="--i:3;"><img src="./flower1.png"></div>
+        <div class="imgslider sli1" style="--i:4;"><img src="./flower1.png"></div>
+        <div class="imgslider sli2" style="--i:5;"><img src="./flower2.png"></div>
+        <div class="imgslider sli3" style="--i:6;"><img src="./pinkflower.png"></div>
+        <div class="imgslider sli3" style="--i:7;"><img src="./flower1.png"></div>
+        
+        
+    </div>
+    
+</body>
+</html>
